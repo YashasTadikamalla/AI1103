@@ -1,0 +1,202 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{xurl}
+\usepackage{tabularx}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{AI1103 : Assignment 4}
+\author{Yashas Tadikamalla - AI20BTECH11027}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/YashasTadikamalla/AI1103/tree/main/Assignment4/codes
+\end{lstlisting}
+%
+and latex codes from 
+%
+\begin{lstlisting}
+https://github.com/YashasTadikamalla/AI1103/blob/main/Assignment4/Assignment4.tex
+\end{lstlisting}
+\section*{GATE-2015-MA-Problem(32)}
+Let $X_{1},X_{2},\dots$, be a sequence of independent and identically distributed random variables with $P(X_{1}=1)=\dfrac{1}{4}$ and $P(X_{1}=2)=\dfrac{3}{4}$. If $\bar X_{n}=\dfrac{1}{n}\displaystyle\sum_{i=1}^{n}X_{i}$,  for $n=1,2,\dots$, then $\displaystyle\lim_{n\to\infty}P(\bar X_{n} \leq 1.8)$ is equal to
+\section*{GATE-2015-MA-Solution(32)}
+Given,
+\begin{align}
+\tag{32.1}
+    Pr(X_{1}=1)=\dfrac{1}{4},Pr(X_{2}=2)=\dfrac{3}{4}
+\end{align}
+As $X_{1},X_{2},\dots$, are identically distributed random variables, $\forall i \in \{1,2,\dots,n\}$
+\begin{align}
+\tag{32.2}
+    Pr(X_{i}=1)=\dfrac{1}{4},Pr(X_{i}=2)=\dfrac{3}{4}
+\end{align}
+Also,
+\begin{align}
+\tag{32.3}
+    \because P(X_{i}&=1)+P(X_{i}=2)=1\\
+\tag{32.4}
+    &\therefore X_{i} \in \{1,2\}
+\end{align}
+Let $X \in \{1,2\}$ be the random variable denoting the value of $X_{i}, \forall i \in \{1,2,\dots,n\}$. Let
+\begin{align}
+\tag{32.5}
+    n(&X=1)=n-k,n(X=2)=k\\
+\tag{32.6}
+    &\Rightarrow\bar X_{n}=\dfrac{1}{n}\displaystyle\sum_{i=1}^{n}X_{i}=\dfrac{n+k}{n}\\
+\tag{32.7}
+    &\hspace{0.25cm}\therefore\bar X_{n} \leq 1.8\Rightarrow k \leq 0.8n
+\end{align}
+The cumulative distribution function (CDF) for a binomial distribution is given by \begin{align}
+\tag{32.8}
+    F_{X}(r)=Pr(X\leq r)=\displaystyle\sum_{k=0}^{r}{\comb{n}{k}}p^{k}q^{n-k}\\
+\tag{32.9}
+    \therefore P(\bar X_{n} \leq 1.8)=\displaystyle\sum_{k=0}^{0.8n}{\comb{n}{k}}p^{k}q^{n-k}
+\end{align}
+where, 
+\begin{align}
+\tag{32.10}
+    p=\dfrac{3}{4},q=1-p=\dfrac{1}{4}
+\end{align}
+\begin{align}
+\tag{32.11}
+    \Rightarrow\displaystyle\lim_{n\to\infty}P(\bar X_{n} \leq 1.8)=\displaystyle\lim_{n\to\infty}\displaystyle\sum_{k=0}^{0.8n}\dfrac{{\comb{n}{k}}3^{k}}{4^{n}}
+\label{eq:val}
+\end{align}
+On solving \eqref{eq:val}, we get
+\begin{align}
+\tag{32.12}
+    \displaystyle\lim_{n\to\infty}P(\bar X_{n} \leq 1.8)=1
+\end{align}
+
+
+
+
+
+\end{document}
